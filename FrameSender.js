@@ -18,10 +18,10 @@
          */
         receive: function(data) {
             var target = parent.postMessage ? parent : (parent.document.postMessage ? parent.document : undefined);
-            if (typeof target != "undefined" && document.body.scrollHeight) {
+            if (typeof target != "undefined" && document.body.offsetHeight) {
                 target.postMessage({
                     id: data.id,
-                    height: document.body.scrollHeight
+                    height: document.body.offsetHeight
                 },'*');
             }
         },
